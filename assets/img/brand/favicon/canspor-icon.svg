@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Can Spor">
+  <title>Can Spor</title>
+  <!-- Logodaki üç koşucu piktogramından türetildi. 32 pikselde üç figür okunmadığı için
+       tek koşucuya indirgendi; öne eğik duruş ve blok karakter logodan alındı.
+       Renk logo dosyasından ölçüldü: lacivert #083F88. 32 pikselde okunurluk için
+       hız çizgileri çıkarıldı, figür kare içinde büyütüldü. -->
+  <rect width="512" height="512" rx="96" fill="#083F88"/>
+
+  <g fill="none" stroke="#fff" stroke-width="54" stroke-linecap="round" stroke-linejoin="round">
+    <!-- gövde: omuzdan kalçaya, öne eğik -->
+    <path d="M330 190 222 300"/>
+    <!-- arka kol -->
+    <path d="M306 214 214 182"/>
+    <!-- ön kol: dirsekten öne, bilek yukarı -->
+    <path d="M318 208 398 236 404 306"/>
+    <!-- arka bacak: itiş -->
+    <path d="M222 300 148 336 112 418"/>
+    <!-- ön bacak: dizden öne -->
+    <path d="M222 300 318 334 306 424"/>
+  </g>
+  <!-- baş -->
+  <circle cx="366" cy="140" r="58" fill="#fff"/>
+</svg>

@@ -1,0 +1,186 @@
+[
+ {
+  "f": "MAXTECH 4 .mp4",
+  "out": "maxtech-4.mp4",
+  "w": 720,
+  "h": 1280,
+  "dur": 18.4,
+  "kb": 5307
+ },
+ {
+  "f": "MAXTECH 5 .mp4",
+  "out": "maxtech-5.mp4",
+  "w": 720,
+  "h": 1280,
+  "dur": 27.4,
+  "kb": 8001
+ },
+ {
+  "f": "MAXTECH 6.mp4",
+  "out": "maxtech-6.mp4",
+  "w": 720,
+  "h": 1280,
+  "dur": 21.6,
+  "kb": 6280
+ },
+ {
+  "f": "MAXTECH FUAR.mp4",
+  "out": "maxtech-fuar.mp4",
+  "w": 720,
+  "h": 1280,
+  "dur": 23.4,
+  "kb": 6738
+ },
+ {
+  "f": "MAXTECH TY SERİSİ.mp4",
+  "out": "maxtech-ty-seri-si.mp4",
+  "w": 720,
+  "h": 1280,
+  "dur": 33.3,
+  "kb": 9729
+ },
+ {
+  "f": "MAXTECH 4 .mp4",
+  "out": "maxtech-4-1080.webm",
+  "w": 1080,
+  "h": 1920,
+  "srcW": 1080,
+  "srcH": 1920,
+  "dur": 18.4,
+  "fps": 144.4,
+  "kb": 7669,
+  "mime": "video/webm;codecs=vp9"
+ },
+ {
+  "f": "MAXTECH 6.mp4",
+  "out": "maxtech-6-1080.webm",
+  "w": 1080,
+  "h": 1920,
+  "srcW": 1080,
+  "srcH": 1920,
+  "dur": 21.6,
+  "fps": 144.4,
+  "kb": 9456,
+  "mime": "video/webm;codecs=vp9"
+ },
+ {
+  "f": "MAXTECH TY SERİSİ.mp4",
+  "out": "maxtech-ty-seri-si-1080.webm",
+  "w": 1080,
+  "h": 1920,
+  "srcW": 1080,
+  "srcH": 1920,
+  "dur": 33.3,
+  "fps": 144.2,
+  "kb": 13361,
+  "mime": "video/webm;codecs=vp9"
+ },
+ {
+  "f": "MAXTECH 4 .mp4",
+  "out": "maxtech-4-1080.mp4",
+  "w": 1080,
+  "h": 1920,
+  "srcW": 1080,
+  "srcH": 1920,
+  "dur": 18.4,
+  "fps": 145.7,
+  "kb": 10589,
+  "mime": "video/mp4;codecs=avc1.640028"
+ },
+ {
+  "f": "MAXTECH 5 .mp4",
+  "out": "maxtech-5-1080.mp4",
+  "w": 1080,
+  "h": 1920,
+  "srcW": 1080,
+  "srcH": 1920,
+  "dur": 27.4,
+  "fps": 145.4,
+  "kb": 15704,
+  "mime": "video/mp4;codecs=avc1.640028"
+ },
+ {
+  "f": "MAXTECH 6.mp4",
+  "out": "maxtech-6-1080.mp4",
+  "w": 1080,
+  "h": 1920,
+  "srcW": 1080,
+  "srcH": 1920,
+  "dur": 21.6,
+  "fps": 145.6,
+  "kb": 12585,
+  "mime": "video/mp4;codecs=avc1.640028"
+ },
+ {
+  "f": "MAXTECH TY SERİSİ.mp4",
+  "out": "maxtech-ty-seri-si-1080.mp4",
+  "w": 1080,
+  "h": 1920,
+  "srcW": 1080,
+  "srcH": 1920,
+  "dur": 33.3,
+  "fps": 145,
+  "kb": 19430,
+  "mime": "video/mp4;codecs=avc1.640028"
+ },
+ {
+  "f": "MAXTECH FUAR.mp4",
+  "out": "maxtech-fuar-1080.webm",
+  "w": 1080,
+  "h": 1920,
+  "srcW": 1080,
+  "srcH": 1920,
+  "dur": 23.4,
+  "fps": 130.1,
+  "kb": 10724,
+  "mime": "video/webm;codecs=vp9"
+ },
+ {
+  "f": "MAXTECH FUAR.mp4",
+  "out": "maxtech-fuar-1080.mp4",
+  "w": 1080,
+  "h": 1920,
+  "srcW": 1080,
+  "srcH": 1920,
+  "dur": 23.4,
+  "fps": 131.2,
+  "kb": 13222,
+  "mime": "video/mp4;codecs=avc1.640028"
+ },
+ {
+  "f": "MAXTECH 4 .mp4",
+  "out": "maxtech-4.webm",
+  "w": 720,
+  "h": 1280,
+  "srcW": 1080,
+  "srcH": 1920,
+  "dur": 18.4,
+  "fps": 144.3,
+  "kb": 4995,
+  "mime": "video/webm;codecs=vp9"
+ },
+ {
+  "f": "MAXTECH 5 .mp4",
+  "out": "maxtech-5.webm",
+  "w": 720,
+  "h": 1280,
+  "srcW": 1080,
+  "srcH": 1920,
+  "dur": 27.4,
+  "fps": 144.3,
+  "kb": 8298,
+  "mime": "video/webm;codecs=vp9"
+ },
+ {
+  "f": "MAXTECH 6.mp4",
+  "out": "maxtech-6.webm",
+  "w": 720,
+  "h": 1280,
+  "srcW": 1080,
+  "srcH": 1920,
+  "dur": 21.6,
+  "fps": 144.2,
+  "kb": 6060,
+  "mime": "video/webm;codecs=vp9"
+ }
+]

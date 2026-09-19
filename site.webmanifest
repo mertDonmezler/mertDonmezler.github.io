@@ -1,0 +1,37 @@
+{
+ "name": "Can Spor — MaxTech profesyonel fitness ekipmanı",
+ "short_name": "Can Spor",
+ "lang": "tr",
+ "dir": "ltr",
+ "start_url": "/",
+ "scope": "/",
+ "display": "standalone",
+ "background_color": "#FFFFFF",
+ "theme_color": "#FFFFFF",
+ "icons": [
+  {
+   "src": "/assets/img/brand/favicon/icon-192.v2.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/assets/img/brand/favicon/icon-512.v2.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/assets/img/brand/favicon/icon-192-maskable.v2.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "maskable"
+  },
+  {
+   "src": "/assets/img/brand/favicon/icon-512-maskable.v2.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}

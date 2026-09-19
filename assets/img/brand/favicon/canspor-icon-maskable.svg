@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Can Spor">
+  <title>Can Spor</title>
+  <!-- Android "maskable" sürüm: arka plan tam taşar, figür güvenli alanda (%72) kalır.
+       Maske hangi biçimde kırparsa kırpsın figür kesilmez. -->
+  <rect width="512" height="512" fill="#083F88"/>
+  <g transform="translate(256 256) scale(0.72) translate(-256 -256)">
+    <g fill="none" stroke="#fff" stroke-width="54" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M330 190 222 300"/>
+      <path d="M306 214 214 182"/>
+      <path d="M318 208 398 236 404 306"/>
+      <path d="M222 300 148 336 112 418"/>
+      <path d="M222 300 318 334 306 424"/>
+    </g>
+    <circle cx="366" cy="140" r="58" fill="#fff"/>
+  </g>
+</svg>
