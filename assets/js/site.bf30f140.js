@@ -105,9 +105,10 @@
     var els = $$('[data-rv], .rv, .rvm, h1, h2').filter(function (el) { return !el.closest('.hero-copy'); });
     function show(el) { if (el.matches('h1, h2')) revealMasks(el); else el.classList.add('in'); }
     if (RM || !('IntersectionObserver' in window)) { els.forEach(show); return; }
-    var io = new IntersectionObserver(function (en) { en.forEach(function (e) { if (!e.isIntersecting) return; var el = e.target; if (!el.matches('h1, h2, .rvm')) { var sib = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0; el.style.transitionDelay = Math.min(sib, 5) * 70 + 'ms'; } show(el); io.unobserve(el); }); }, { rootMargin: '0px 0px -6% 0px', threshold: .06 });
-    els.forEach(function (el) { var r = el.getBoundingClientRect(); if (r.top < innerHeight * .92 && r.bottom > 0) show(el); else io.observe(el); });
-    setTimeout(function () { els.forEach(show); }, 6000);
+    /* dokunmatikte erken ve gecikmesiz aç; masaüstünde hafif kademe */
+    var io = new IntersectionObserver(function (en) { en.forEach(function (e) { if (!e.isIntersecting) return; var el = e.target; if (FINE && !el.matches('h1, h2, .rvm')) { var sib = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0; el.style.transitionDelay = Math.min(sib, 5) * 70 + 'ms'; } show(el); io.unobserve(el); }); }, { rootMargin: FINE ? '0px 0px -6% 0px' : '0px 0px 14% 0px', threshold: FINE ? .06 : 0 });
+    els.forEach(function (el) { var r = el.getBoundingClientRect(); if (r.bottom <= 0 || (r.top < innerHeight * (FINE ? .92 : 1.1))) show(el); else io.observe(el); });
+    setTimeout(function () { els.forEach(show); }, FINE ? 6000 : 3500);
   })();
 
   /* ---- GSAP: parallax, ray, süreç, şerit ---- */
@@ -124,8 +125,11 @@
       var t2 = G.to(heroCopy, { y: -70, opacity: .15, ease: 'none', scrollTrigger: { trigger: '.hero-split', start: 'top top', end: 'bottom top', scrub: true } });
       return function () { [t1, t2].forEach(function (t) { t.scrollTrigger && t.scrollTrigger.kill(); t.kill(); }); G.set([heroPanel, heroCopy], { clearProps: 'transform,opacity' }); };
     });
-    /* parallax: [data-par] içindeki medya */
-    $$('[data-par]').forEach(function (el) { var m = el.querySelector('img, video'); if (!m) return; G.fromTo(m, { yPercent: -6, scale: 1.14 }, { yPercent: 6, scale: 1.14, ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } }); });
+    /* parallax: [data-par] içindeki medya — yalnız ince imleçli geniş ekranda (telefonda adres çubuğu yeniden boyutlaması sıçratır) */
+    G.matchMedia().add('(min-width: 1024px) and (pointer: fine)', function () {
+      var tws = $$('[data-par]').map(function (el) { var m = el.querySelector('img, video'); return m ? G.fromTo(m, { yPercent: -6, scale: 1.14 }, { yPercent: 6, scale: 1.14, ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } }) : null; }).filter(Boolean);
+      return function () { tws.forEach(function (t) { t.scrollTrigger && t.scrollTrigger.kill(); t.kill(); }); $$('[data-par] img, [data-par] video').forEach(function (m) { G.set(m, { clearProps: 'transform' }); }); };
+    });
     /* ray: masaüstünde bölüm sabitlenir, kartlar yatay kayar */
     var rail = $('[data-rail]');
     if (rail) {

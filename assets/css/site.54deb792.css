@@ -20,7 +20,7 @@ html{background:var(--paper);color:var(--ink);scroll-behavior:auto}
 html.lenis,html.lenis body{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
 .lenis.lenis-stopped{overflow:hidden}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--sans);font-variation-settings:"wdth" 100;-webkit-font-smoothing:antialiased;overflow-x:clip}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--sans);font-variation-settings:"wdth" 100;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip}
 html.js body{animation:pagein .5s ease both}
 html.leaving body{opacity:0;transition:opacity .22s ease}
 @keyframes pagein{from{opacity:0}to{opacity:1}}
@@ -170,7 +170,7 @@ body.dark-top .crumbs a{color:rgba(255,255,255,.72)}body.dark-top .crumbs a:hove
 .vpanel .vcap{position:absolute;left:18px;bottom:16px;z-index:2;color:#fff;font:400 13px/1.4 var(--sans);opacity:.85;text-shadow:0 1px 8px rgba(0,0,0,.5)}
 
 /* =================== ANA SAYFA HERO: VİDEO DUVARI (üç dikey klip, tam ekran, kırpma yok denecek kadar az) =================== */
-.hero-wall{position:relative;height:100svh;min-height:600px;max-height:1200px;margin-top:calc(-1 * var(--nav));background:var(--navy0);color:#fff;overflow:hidden}
+.hero-wall{position:relative;height:100vh;height:100svh;min-height:600px;max-height:1200px;margin-top:calc(-1 * var(--nav));background:var(--navy0);color:#fff;overflow:hidden}
 .hero-wall .wall{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:#020A1C}
 .hero-wall .wpanel{position:relative;overflow:hidden;background:var(--navy0)}
 .hero-wall .wpanel video,.hero-wall .wpanel img{position:absolute;left:0;top:-6%;width:100%;height:112%;object-fit:cover;object-position:50% 50%;will-change:transform}
@@ -191,7 +191,8 @@ body.dark-top .crumbs a{color:rgba(255,255,255,.72)}body.dark-top .crumbs a:hove
 html.js.gs .hero-wall .wpanel{clip-path:inset(100% 0 0 0)}
 html.js.gs .hero-wall .wpanel.in{clip-path:inset(0 0 0 0);transition:clip-path 1.25s var(--ease)}
 html.js.gs .hero-foot{opacity:0;transition:opacity .9s ease 1.1s}html.js.gs .hero-foot.in{opacity:1}
-@media(max-width:959px){.hero-wall{height:92svh;min-height:520px}.hero-wall .wall{grid-template-columns:1fr}.hero-wall .wpanel.side{display:none}.hero-over h1{font-size:clamp(40px,12.5vw,66px)}.hero-over{padding-bottom:72px}.hero-foot .facts{display:none}}
+/* telefon: yükseklik içeriğe göre büyür (küçük ekranda başlık nav'ın altına kaçmaz), tek pano, düğmeler tam satır */
+@media(max-width:959px){.hero-wall{height:auto;min-height:92vh;min-height:92svh;max-height:none}.hero-wall .wall{grid-template-columns:1fr}.hero-wall .wpanel.side{display:none}.hero-over{height:auto;min-height:92vh;min-height:92svh;padding-top:calc(var(--nav) + 28px);padding-bottom:76px}.hero-over h1{font-size:clamp(38px,12vw,64px);max-width:none}.hero-over .lede{font-size:16px}.hero-over .acts .btn{flex:1 1 100%;justify-content:center}.hero-foot .facts{display:none}}
 
 /* =================== ANA SAYFA HERO (bölünmüş: metin + dikey video) — v11, içerik sayfalarında kullanılabilir =================== */
 .hero-split{position:relative;background:#fff;overflow:hidden}
@@ -316,6 +317,7 @@ html.js.gs .hero-foot{opacity:0;transition:opacity .9s ease 1.1s}html.js.gs .her
 
 /* =================== ÜRÜN KARTLARI =================== */
 .pgrid{display:grid;gap:22px 16px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+@media(max-width:599px){.pgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 10px}.prod{min-width:0}.prod h3{font-size:14px}.prod .code{font-size:12px}.prod .chips{display:none}.prod-foot{flex-wrap:wrap;gap:6px 10px}.prod-foot .pr{font-size:12px;white-space:normal}.prod-foot .pr b{font-size:13px}.prod-foot .tl{font-size:13px}}
 .prod{display:flex;flex-direction:column;gap:10px}
 .prod-img{position:relative;aspect-ratio:1/1;border-radius:var(--r2);background:#fff;border:1px solid var(--line);display:block;overflow:hidden;transition:border-color .25s}
 .prod-img img{position:absolute;inset:0;margin:auto;max-height:80%;max-width:80%;width:auto;height:auto;transition:transform .7s var(--ease)}
@@ -556,7 +558,7 @@ footer{background:var(--navy0);color:#fff;--ink:#fff;--ink2:rgba(255,255,255,.72
 .consent p{font:400 13px/1.5 var(--sans);color:var(--ink2);margin:0}
 .consent a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
 .consent-acts{display:flex;gap:8px;flex-wrap:wrap}
-@media(max-width:600px){.consent{left:12px;right:12px;bottom:12px;width:auto}.consent-acts .btn{flex:1 1 auto;justify-content:center}}
+@media(max-width:600px){.consent{left:12px;right:12px;bottom:12px;width:auto}.consent-in{padding:14px 16px 14px;gap:10px}.consent p{font-size:12.5px;line-height:1.45}.consent-acts .btn{flex:1 1 auto;justify-content:center;height:40px}}
 .consent:focus{outline:none}
 html.consent-on{scroll-padding-bottom:160px}
 @media(max-width:600px){html.consent-on .wa-float{opacity:0;pointer-events:none}}
@@ -601,4 +603,8 @@ html.js.gs .hero-panel.in{clip-path:inset(0 0 0 0 round var(--r3));transition:cl
 html.js.gs .hero-copy .lede,html.js.gs .hero-copy .acts,html.js.gs .hero-copy .hero-meta{opacity:0;transform:translateY(14px)}
 html.js.gs .hero-copy.in .lede,html.js.gs .hero-copy.in .acts,html.js.gs .hero-copy.in .hero-meta{opacity:1;transform:none;transition:opacity .9s ease,transform .9s var(--ease)}
 html.js.gs .hero-copy.in .acts{transition-delay:.12s}html.js.gs .hero-copy.in .hero-meta{transition-delay:.24s}
+/* eski Safari (iOS ≤ 14): aspect-ratio yoksa oranı padding ile kur — kutular sıfır yükseklikte kalmasın */
+@supports not (aspect-ratio:1/1){.vpanel,.sitem{height:0!important;padding-top:177.78%}.sitem.wide{padding-top:125%}.pm-stack{height:0;padding-top:125%}.prod-img,.gallery-main,.zone .im,.rcard .rimg{height:0;padding-top:100%}.cat .im{height:0;padding-top:75%}.ph{height:0;padding-top:120%}.jmed{height:0;padding-top:75%}}
+/* dokunmatik: daha kısa, gecikmesiz açılışlar (telefonda hızlı kaydırmada boşluk kalmasın) */
+@media(pointer:coarse){html.js [data-rv],html.js .rv{transform:translateY(12px);transition-duration:.5s,.55s}html.js.gs .msk.in>.ln{transition-duration:.7s}html.js.gs .rvm.in{transition-duration:.8s}html.js.gs .rvm.in>img,html.js.gs .rvm.in>video{transition-duration:1s}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}html.js [data-rv],html.js .rv{opacity:1;transform:none}html.js .proc-steps li{opacity:1}}
