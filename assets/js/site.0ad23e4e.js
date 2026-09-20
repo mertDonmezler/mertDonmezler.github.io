@@ -7,6 +7,7 @@
   var root = document.documentElement, RM = matchMedia('(prefers-reduced-motion: reduce)').matches, FINE = matchMedia('(pointer:fine)').matches;
   var DESK = function () { return innerWidth >= 1024; };
   var C = window.CS_CONFIG || {};
+  try { console.log('%cUnholy Labs%c  tasarım & geliştirme · unholylabs.com', 'font:700 13px/1.6 system-ui;letter-spacing:.08em;color:#fff;background:#071F45;padding:4px 8px;border-radius:4px', 'font:12px system-ui;color:#4B5567'); } catch (e) { }
   var G = window.gsap, ST = window.ScrollTrigger, GS = !!(G && ST) && !RM;
   if (GS) { G.registerPlugin(ST); root.classList.add('gs'); } else root.classList.remove('gs');
   var NAVH = parseInt(getComputedStyle(root).getPropertyValue('--nav')) || 72;
