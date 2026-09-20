@@ -162,7 +162,14 @@
   (function () {
     var proc = $('[data-proc]'); if (!proc) return;
     var steps = $$('.proc-steps li', proc), media = $$('.pm-stack [data-step]', proc), cap = $('[data-cap]', proc);
-    function setStep(i) { steps.forEach(function (li, k) { li.classList.toggle('on', k === i); }); media.forEach(function (m, k) { m.classList.toggle('on', k === i); }); if (cap && steps[i]) cap.textContent = steps[i].dataset.cap || ''; }
+    function setStep(i) {
+      steps.forEach(function (li, k) { li.classList.toggle('on', k === i); });
+      media.forEach(function (m, k) {
+        var on = k === i; m.classList.toggle('on', on);
+        if (m.tagName === 'VIDEO') { if (on) { if (m.preload === 'none') { m.preload = 'auto'; m.load(); } var pr = m.play(); if (pr && pr.catch) pr.catch(function () { }); } else if (!m.paused) m.pause(); }
+      });
+      if (cap && steps[i]) cap.textContent = steps[i].dataset.cap || '';
+    }
     if (GS) steps.forEach(function (li, i) { ST.create({ trigger: li, start: 'top 55%', end: 'bottom 45%', onEnter: function () { setStep(i); }, onEnterBack: function () { setStep(i); } }); });
     else if ('IntersectionObserver' in window) { var io = new IntersectionObserver(function (en) { en.forEach(function (e) { if (e.isIntersecting) setStep(steps.indexOf(e.target)); }); }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 }); steps.forEach(function (li) { io.observe(li); }); }
   })();
